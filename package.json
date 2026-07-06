@@ -1,0 +1,16 @@
+{
+  "name": "zenth",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Execution-first mobile productivity system for ADHD users",
+  "scripts": {
+    "dev:mobile": "pnpm --filter mobile exec expo start",
+    "dev:web": "pnpm --filter web dev",
+    "build:web": "pnpm --filter web build",
+    "typecheck": "pnpm -r run typecheck",
+    "clean": "pnpm -r exec -- rm -rf node_modules && rm -rf node_modules"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

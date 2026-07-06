@@ -1,0 +1,48 @@
+{
+  "expo": {
+    "name": "Zenth",
+    "slug": "zenth",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "icon": "./assets/logo/logo-icon-1024.png",
+    "scheme": "zenth",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#0f0f12",
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.zenth.app"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#0f0f12",
+        "foregroundImage": "./assets/logo/logo-icon-adaptive-foreground.png"
+      },
+      "package": "com.zenth.app"
+    },
+    "web": {
+      "output": "static",
+      "favicon": "./assets/logo/favicon-32.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#0f0f12",
+          "image": "./assets/logo/splash-icon-512.png",
+          "imageWidth": 200
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/logo/favicon-32.png",
+          "color": "#7c5cff"
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}

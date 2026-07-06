@@ -1,0 +1,20 @@
+{
+  "cli": {
+    "version": ">= 3.13.3"
+  },
+  "build": {
+    "preview": {
+      "android": {
+        "buildType": "apk"
+      },
+      "env": {
+        "EXPO_USE_PATH_ALIASES": "1"
+      }
+    },
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal"
+    },
+    "production": {}
+  }
+}
