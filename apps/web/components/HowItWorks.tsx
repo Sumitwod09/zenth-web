@@ -30,9 +30,9 @@ export function HowItWorks() {
       <p className="section-label animate-in">How It Works</p>
       <h2 className="section-title animate-in">Four steps. No learning curve.</h2>
       <p className="section-subtitle animate-in">From thought to done in under a minute.</p>
-      <div className="steps">
+      <div className="steps animate-in">
         {steps.map((s, i) => (
-          <div key={s.number} className="step animate-in" style={{ transitionDelay: `${i * 0.12}s` }}>
+          <div key={s.number} className="step">
             <div className="step-number">{s.number}</div>
             <div className="step-content">
               <h3>{s.title}</h3>
