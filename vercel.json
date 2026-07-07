@@ -1,6 +1,6 @@
 {
-  "buildCommand": "pnpm --filter mobile run build:web",
-  "outputDirectory": "apps/mobile/dist",
-  "framework": "expo",
-  "ignoreCommand": "git diff --quiet HEAD^ HEAD ./"
+  "buildCommand": "pnpm --filter web build",
+  "outputDirectory": "apps/web/.next",
+  "framework": "nextjs",
+  "installCommand": "pnpm install"
 }

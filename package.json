@@ -2,6 +2,7 @@
   "name": "zenth",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@11.3.0",
   "description": "Execution-first mobile productivity system for ADHD users",
   "scripts": {
     "dev:mobile": "pnpm --filter mobile exec expo start",

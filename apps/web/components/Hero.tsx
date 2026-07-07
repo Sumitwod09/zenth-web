@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ArrowRight, ArrowDown } from "lucide-react";
 
 export function Hero() {
@@ -14,9 +15,9 @@ export function Hero() {
         Zenth removes the gap between thinking and doing. Capture a thought, focus on one task, track your wins. No folders, no tags, no friction.
       </p>
       <div className="hero-actions">
-        <a href="#download" className="btn-primary">
-          Download Free <ArrowRight size={18} />
-        </a>
+        <Link href="/sign-up" className="btn-primary">
+          Get Started Free <ArrowRight size={18} />
+        </Link>
         <a href="#features" className="btn-secondary">
           See How It Works <ArrowDown size={18} />
         </a>

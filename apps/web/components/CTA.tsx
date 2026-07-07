@@ -1,5 +1,7 @@
 "use client";
 import { useEffect, useRef } from "react";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 export function CTA() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -19,17 +21,14 @@ export function CTA() {
   }, []);
 
   return (
-    <section className="cta" id="waitlist" ref={sectionRef}>
+    <section className="cta" id="cta" ref={sectionRef}>
       <div className="cta-card animate-in">
         <h2>Ready to stop planning and start doing?</h2>
-        <p>Zenth is ready. Start executing your thoughts today.</p>
+        <p>Zenth is free. No credit card required. Start executing your thoughts today.</p>
         <div style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap", position: "relative", zIndex: 2 }}>
-          <button className="btn-primary" onClick={() => alert("Downloading Android APK...")}>
-            Download for Android
-          </button>
-          <button className="btn-secondary" onClick={() => alert("iOS version coming soon!")}>
-            Download for iOS
-          </button>
+          <Link href="/sign-up" className="btn-primary">
+            Start Using Zenth <ArrowRight size={18} />
+          </Link>
         </div>
       </div>
     </section>

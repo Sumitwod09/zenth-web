@@ -95,10 +95,15 @@ img { max-width: 100%; height: auto; }
   gap: 10px;
 }
 
-.navbar-logo {
+.navbar-logo-icon {
   width: 32px;
   height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-glow);
   border-radius: 8px;
+  color: var(--accent);
 }
 
 .navbar-name {
