@@ -5,6 +5,8 @@
   "private": true,
   "dependencies": {
     "@clerk/clerk-expo": "^2.19.31",
+    "@expo-google-fonts/inter": "^0.4.2",
+    "@expo-google-fonts/space-grotesk": "^0.4.1",
     "@expo/metro-runtime": "^57.0.3",
     "@expo/vector-icons": "^14.0.0",
     "@react-native-async-storage/async-storage": "2.1.2",
@@ -44,6 +46,7 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
+    "build:web": "expo export -p web",
     "typecheck": "tsc --noEmit"
   }
 }
