@@ -22,19 +22,15 @@ export function CTA() {
     <section className="cta" id="waitlist" ref={sectionRef}>
       <div className="cta-card animate-in">
         <h2>Ready to stop planning and start doing?</h2>
-        <p>Join the waitlist. Be the first to try Zenth when it launches.</p>
-        <form className="cta-form" action="https://formspree.io/f/placeholder" method="POST" onSubmit={(e) => {
-          e.preventDefault();
-          const form = e.target as HTMLFormElement;
-          const email = (form.elements.namedItem("email") as HTMLInputElement)?.value;
-          if (email) {
-            alert(`Thanks! We'll notify ${email} when Zenth launches.`);
-            form.reset();
-          }
-        }}>
-          <input type="email" name="email" className="cta-input" placeholder="your@email.com" required />
-          <button type="submit" className="cta-submit">Join Waitlist</button>
-        </form>
+        <p>Zenth is ready. Start executing your thoughts today.</p>
+        <div style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap", position: "relative", zIndex: 2 }}>
+          <button className="btn-primary" onClick={() => alert("Downloading Android APK...")}>
+            Download for Android
+          </button>
+          <button className="btn-secondary" onClick={() => alert("iOS version coming soon!")}>
+            Download for iOS
+          </button>
+        </div>
       </div>
     </section>
   );
