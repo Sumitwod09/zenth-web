@@ -2,6 +2,7 @@
 // App entry: loads fonts, initializes DB, sets up notification listeners.
 
 import { useEffect } from 'react';
+import { View, Text } from 'react-native';
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import * as SplashScreen from 'expo-splash-screen';
@@ -17,8 +18,7 @@ import { ClerkProvider, SignedIn, SignedOut } from '@clerk/clerk-expo';
 import { tokenCache } from '@/lib/tokenCache';
 import { SignInScreen } from '@/components/SignInScreen';
 
-const publishableKey = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY!;
-
+const publishableKey = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY;
 
 // Keep splash screen visible while loading
 SplashScreen.preventAutoHideAsync();
@@ -44,6 +44,14 @@ export default function RootLayout() {
 
   if (!isReady || !fontsLoaded) {
     return null;
+  }
+
+  if (!publishableKey) {
+    return (
+      <View style={{ flex: 1, backgroundColor: colors.background, justifyContent: 'center', alignItems: 'center', padding: 20 }}>
+        <Text style={{ color: 'white', fontSize: 18, textAlign: 'center' }}>Missing EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY in .env.local</Text>
+      </View>
+    );
   }
 
   return (

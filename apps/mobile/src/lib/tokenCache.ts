@@ -1,8 +1,11 @@
 import * as SecureStore from 'expo-secure-store';
+import { Platform } from 'react-native';
 
 export const tokenCache = {
   async getToken(key: string) {
     try {
+      if (Platform.OS === 'web') return null; // Clerk handles web tokens automatically via cookies/localstorage
+      
       const item = await SecureStore.getItemAsync(key);
       if (item) {
         console.log(`${key} was used 🔐 \n`);
@@ -12,12 +15,15 @@ export const tokenCache = {
       return item;
     } catch (error) {
       console.error('SecureStore get item error: ', error);
-      await SecureStore.deleteItemAsync(key);
+      if (Platform.OS !== 'web') {
+        await SecureStore.deleteItemAsync(key);
+      }
       return null;
     }
   },
   async saveToken(key: string, value: string) {
     try {
+      if (Platform.OS === 'web') return;
       return SecureStore.setItemAsync(key, value);
     } catch (err) {
       return;
