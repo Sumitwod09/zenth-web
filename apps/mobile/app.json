@@ -20,6 +20,7 @@
       "package": "com.zenth.app"
     },
     "web": {
+      "bundler": "metro",
       "output": "static",
       "favicon": "./assets/logo/favicon-32.png"
     },
