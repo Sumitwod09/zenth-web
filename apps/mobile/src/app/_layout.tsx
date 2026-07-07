@@ -13,6 +13,12 @@ import {
 import { useDatabase } from '@/hooks/useDatabase';
 import { useNotifications } from '@/hooks/useNotifications';
 import { colors } from '@zenth/utils';
+import { ClerkProvider, SignedIn, SignedOut } from '@clerk/clerk-expo';
+import { tokenCache } from '@/lib/tokenCache';
+import { SignInScreen } from '@/components/SignInScreen';
+
+const publishableKey = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY!;
+
 
 // Keep splash screen visible while loading
 SplashScreen.preventAutoHideAsync();
@@ -41,15 +47,20 @@ export default function RootLayout() {
   }
 
   return (
-    <>
+    <ClerkProvider publishableKey={publishableKey} tokenCache={tokenCache}>
       <StatusBar style="light" backgroundColor={colors.background} />
-      <Stack
-        screenOptions={{
-          headerShown: false,
-          contentStyle: { backgroundColor: colors.background },
-          animation: 'fade',
-        }}
-      />
-    </>
+      <SignedIn>
+        <Stack
+          screenOptions={{
+            headerShown: false,
+            contentStyle: { backgroundColor: colors.background },
+            animation: 'fade',
+          }}
+        />
+      </SignedIn>
+      <SignedOut>
+        <SignInScreen />
+      </SignedOut>
+    </ClerkProvider>
   );
 }
