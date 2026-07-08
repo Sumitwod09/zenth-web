@@ -70,9 +70,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--accent-glow);
-  border-radius: 10px;
   color: var(--accent);
+  transition: transform 0.2s ease;
+}
+
+.sidebar-logo-icon:hover {
+  transform: scale(1.08);
 }
 
 .sidebar-logo-text {

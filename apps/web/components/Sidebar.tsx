@@ -3,7 +3,8 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { UserButton } from "@clerk/nextjs";
-import { Brain, Zap, BarChart3, Settings, Sparkles } from "lucide-react";
+import { Brain, Zap, BarChart3, Settings } from "lucide-react";
+import { Logo } from "./Logo";
 
 const navItems = [
   { href: "/dashboard", label: "Brain Dump", icon: Brain },
@@ -22,7 +23,7 @@ export function Sidebar() {
         <div className="sidebar-header">
           <div className="sidebar-brand">
             <div className="sidebar-logo-icon">
-              <Sparkles size={20} strokeWidth={1.8} />
+              <Logo size={32} />
             </div>
             <span className="sidebar-logo-text">Zenth</span>
           </div>

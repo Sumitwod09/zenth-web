@@ -1,15 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Show } from "@clerk/nextjs";
+import { Logo } from "./Logo";
 
 export function Navbar() {
   return (
     <nav className="navbar" id="main-navbar">
       <div className="navbar-brand">
         <div className="navbar-logo-icon">
-          <Sparkles size={18} strokeWidth={1.8} />
+          <Logo size={28} />
         </div>
         <span className="navbar-name">Zenth</span>
       </div>
